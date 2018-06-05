@@ -1,4 +1,14 @@
+CC = g++
+CPPFILES = driver.cpp Threads.cpp
+FLAG = -lpthread
+EXEC = player
+
 all:
-    g++ driver.cpp Threads.cpp -o player -lpthread
+	$(CC) $(CPPFILES) -o $(EXEC) $(FLAG)
+	rm -f *.o
+
 run: all
-    ./player
+	./$(EXEC)
+
+clean:
+	rm -f *.o core a.out $(EXEC)
