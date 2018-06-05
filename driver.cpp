@@ -1,3 +1,11 @@
+/*
+    Members: Cody Morgan, Andrew Levandowski
+    Accounts: cssc1211 (location of assignment), cssc1214
+    Class: CS 570, Summer 2018
+    Assignment: Assignment 1, Thread Management
+    Filename: driver.cpp
+*/
+
 #include "Threads.hpp"
 #include <fstream>
 #include <semaphore.h>

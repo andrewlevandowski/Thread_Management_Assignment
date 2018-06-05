@@ -1,0 +1,20 @@
+Members: Cody Morgan, Andrew Levandowski
+Accounts: cssc1211 (location of assignment), cssc1214
+Class: CS 570, Summer 2018
+Assignment: Assignment 1, Thread Management
+Filename: README
+
+File Manifest: 
+	driver.cpp - Contains main function
+	Threads.cpp - Contains creation and running of threads
+	Threads.hpp - Header file referencing relevant functions
+	STACK.txt - Text file generated containing Process ID and 52 cards
+	Makefile
+    README
+	
+
+To compile and run, execute (on Linux/Edoras console):
+make run
+
+
+During the development of this assignment, we decided to split the code into 2 .cpp files, one driver file for the main function and a threads file for managing the 4 threads. Inside the threads file there is a thread creation/initialization function, a thread running function, and a function for creating the card text for printing. We learned a lot about thread creation/management and how IPC mechanisms like semaphore can be helpful in accomplishing said thread management. We also learned about the benefits of a standard like POSIX which was helpful when we needed to use a sleep function (usleep) and find the manual pages for pthread functions. 
