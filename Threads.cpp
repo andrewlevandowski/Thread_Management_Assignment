@@ -39,7 +39,8 @@ void* threadRunner(void* thr_ptr)
         ofstream outfile ("STACK.txt", ios::app);
         outfile << currentCard(thrID-1, j) << "\n";     // write current card to file
         outfile.close();
-        cout << "Thread " << thrID << " is running\n";
+	printf("Thread %d is running\n", thrID);
+        // cout << "Thread " << thrID << " is running" << endl;
 
         sem_post(&FLAG);    // increment semaphore, end of critical section
 
