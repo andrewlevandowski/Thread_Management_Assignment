@@ -13,6 +13,7 @@
 #include <unistd.h>
 #include <fstream>
 #include <stdint.h>
+#include <mutex>
 
 using namespace std;
 
@@ -30,6 +31,8 @@ string currentCard(int i, int j)
 
 void* threadRunner(void* thr_ptr)
 {
+    mutex m;
+
     int thrID = (intptr_t) thr_ptr;
     
     sem_wait(&FLAG);    // decrement semaphore
@@ -39,7 +42,9 @@ void* threadRunner(void* thr_ptr)
         ofstream outfile ("STACK.txt", ios::app);
         outfile << currentCard(thrID-1, j) << "\n";     // write current card to file
     
+        m.lock();
         cout << "Thread " << thrID << " is running\n";
+        m.unlock();
 
         outfile.close();
 
