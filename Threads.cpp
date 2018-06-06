@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include <fstream>
 #include <stdint.h>
-#include <mutex>
 
 using namespace std;
 
@@ -31,24 +30,18 @@ string currentCard(int i, int j)
 
 void* threadRunner(void* thr_ptr)
 {
-    mutex m;
-
     int thrID = (intptr_t) thr_ptr;
-    
-    sem_wait(&FLAG);    // decrement semaphore
 
     for(int j=0; j < 13; j++)
     {
+        sem_wait(&FLAG);    // decrement semaphore, start of critical section
+
         ofstream outfile ("STACK.txt", ios::app);
         outfile << currentCard(thrID-1, j) << "\n";     // write current card to file
-    
-        m.lock();
-        cout << "Thread " << thrID << " is running\n";
-        m.unlock();
-
         outfile.close();
+        cout << "Thread " << thrID << " is running\n";
 
-        sem_post(&FLAG);    // increment semaphore
+        sem_post(&FLAG);    // increment semaphore, end of critical section
 
         if(thrID == 1)      // set thread execution timings based on prompt (microseconds)
             usleep(125000); // usleep is a POSIX function that takes in timings < a second
