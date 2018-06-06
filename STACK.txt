@@ -1,4 +1,4 @@
-3137
+3438
 Spade A
 Heart A
 Club A
@@ -21,9 +21,9 @@ Diamond 9
 Diamond 10
 Club 6
 Diamond J
+Diamond Q
 Spade 3
 Heart 4
-Diamond Q
 Club 7
 Diamond K
 Club 8
@@ -40,8 +40,8 @@ Club K
 Heart 8
 Spade 6
 Heart 9
-Heart 10
 Spade 7
+Heart 10
 Heart J
 Spade 8
 Heart Q
