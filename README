@@ -10,7 +10,7 @@ File Manifest:
 	Threads.hpp - Header file referencing relevant functions
 	STACK.txt - Text file generated containing Process ID and 52 cards
 	Makefile
-    README
+    	README
 	
 
 To compile and run, execute command below (on Linux/Edoras console):
